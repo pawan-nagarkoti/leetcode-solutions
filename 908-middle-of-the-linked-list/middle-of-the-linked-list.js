@@ -21,10 +21,11 @@ var middleNode = function(head) {
 
     let i=0;
     let ln = Math.floor(l/2)
-    let fMid = head;
+    // let fMid = head;
     while(i<ln){
-        fMid = fMid.next
+        // fMid = fMid.next
+        head = head.next
         ++i
     }
-    return fMid
+    return head
 };

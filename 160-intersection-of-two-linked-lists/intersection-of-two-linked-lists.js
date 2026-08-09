@@ -31,39 +31,52 @@
 // };
 
 
+// var getIntersectionNode = function (headA, headB) {
+//     let p1 = headA;
+//     let p2 = headB;
+//     let check1 = false;
+//     let check2 = false;
+
+
+//     while (p1 !== null || p2 !== null) {
+//         if (p1 == p2) {
+//             return p1 || p2
+//         }
+//         if (check1 && p1 === null || check2 && p2 === null) {
+//             return null;
+//         }
+
+
+//         if (p1 === null) {
+//             p1 = headB
+//             check1 = true;
+//         } else {
+//             p1 = p1.next;
+//         }
+
+
+//         if (p2 === null) {
+//             p2 = headA
+//             check2 = true;
+
+//         } else {
+//             p2 = p2.next;
+//         }
+
+//     }
+// }
+
+
 var getIntersectionNode = function (headA, headB) {
     let p1 = headA;
     let p2 = headB;
-    let check1 = false;
-    let check2 = false;
 
-
-    while (p1 !== null || p2 !== null) {
-        if (p1 == p2) {
-            return p1 || p2
-        }
-        if (check1 && p1 === null || check2 && p2 === null) {
-            return null;
-        }
-        
-
-        if (p1 === null) {
-            p1 = headB
-            check1 = true;
-        } else {
-            p1 = p1.next;
-        }
-
-
-        if (p2 === null) {
-            p2 = headA
-            check2 = true;
-
-        } else {
-            p2 = p2.next;
-        }
-
+    while (p1 != p2) {
+        p1 = p1===null ? headB : p1.next;
+        p2 = p2===null ? headA : p2.next
     }
+
+    return p1
 }
 
 

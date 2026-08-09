@@ -72,20 +72,14 @@ var isPalindrome = function (head) {
     }
 
     // check is it pailendrome
-    let mainHead = head;
-    head = prev;
-
-    let check = false;
-    while (mainHead && head) {
-        console.log('hii')
-        if (mainHead.val === head.val) {
-            check = true;
-            mainHead = mainHead.next;
-            head = head.next;
-        } else {
-            check = false;
-            break;
+    let firstList = head;
+    let secondList = prev;
+    while (secondList) {
+        if(firstList.val !== secondList.val){
+            return false;
         }
+       firstList = firstList.next;
+       secondList = secondList.next
     }
-    return check;
+    return true;
 }

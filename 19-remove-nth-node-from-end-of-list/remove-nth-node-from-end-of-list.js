@@ -10,6 +10,8 @@
  * @param {number} n
  * @return {ListNode}
  */
+
+//  Two Pass approach
 var removeNthFromEnd = function (head, n) {
     let l = 0;
     let curr = head;
@@ -33,7 +35,7 @@ var removeNthFromEnd = function (head, n) {
     return head;
 };
 
-
+//  Two Pass approach using sentinal node
 var removeNthFromEnd = function (head, n) {
     let sentinal = new ListNode();
     sentinal.next = head;
@@ -52,5 +54,29 @@ var removeNthFromEnd = function (head, n) {
         ++j
     }
     prev.next = prev.next.next;
+    return sentinal.next
+}
+
+// one pass approach
+
+var removeNthFromEnd = function (head, n) {
+    let sentinal = new ListNode();
+    sentinal.next = head;
+
+    let slow = sentinal;
+    let fast = head;
+    let i=0;
+    while(i<n-1){
+        fast = fast.next;
+        ++i
+    }
+
+    while(fast && fast.next){
+        slow=slow.next;
+        fast=fast.next;
+    }
+
+    slow.next=slow.next.next;
+
     return sentinal.next
 }

@@ -18,9 +18,7 @@ var removeNthFromEnd = function (head, n) {
         ++l
     }
 
-
     let index = l - n;
-    console.log(index)
     if(index===0){
         return head.next
     }
@@ -34,3 +32,25 @@ var removeNthFromEnd = function (head, n) {
     curr1.next = curr1.next.next;
     return head;
 };
+
+
+var removeNthFromEnd = function (head, n) {
+    let sentinal = new ListNode();
+    sentinal.next = head;
+    let l=0;
+    let curr = head;
+    while(curr){
+        ++l;
+        curr=curr.next
+    }
+    let prevVal = l-n;
+
+    let prev = sentinal;
+    j=0
+    while(j<prevVal){
+        prev= prev.next
+        ++j
+    }
+    prev.next = prev.next.next;
+    return sentinal.next
+}

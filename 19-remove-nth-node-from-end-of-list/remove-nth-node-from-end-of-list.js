@@ -57,7 +57,7 @@ var removeNthFromEnd = function (head, n) {
     return sentinal.next
 }
 
-// one pass approach
+// one pass approach (using two pointer approach)
 
 var removeNthFromEnd = function (head, n) {
     let sentinal = new ListNode();
@@ -71,7 +71,7 @@ var removeNthFromEnd = function (head, n) {
         ++i
     }
 
-    while(fast && fast.next){
+    while( fast.next){
         slow=slow.next;
         fast=fast.next;
     }

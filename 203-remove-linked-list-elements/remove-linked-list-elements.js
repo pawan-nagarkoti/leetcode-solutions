@@ -12,9 +12,8 @@
  */
 var removeElements = function(head, val) {
     let sentinalNode = new ListNode();
-
-    let prev = sentinalNode;
     sentinalNode.next = head;
+    let prev = sentinalNode;
     let curr = head;
 
     while(curr){
@@ -31,3 +30,20 @@ var removeElements = function(head, val) {
     return sentinalNode.next
 
 };
+
+
+var removeElements = function(head, val) {
+    let sentinel = new ListNode();
+    sentinel.next = head;
+    let prev = sentinel;
+
+    while(prev && prev.next){
+        if(prev.next.val === val){
+            prev.next = prev.next.next
+        }else{
+            prev = prev.next;
+        }
+    }
+
+    return sentinel.next
+}

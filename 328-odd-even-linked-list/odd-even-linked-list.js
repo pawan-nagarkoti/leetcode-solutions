@@ -16,10 +16,12 @@ var oddEvenList = function (head) {
     let fast = head.next;
     let fastStart = head.next;
 
-    while ((slow && slow.next) && (fast && fast.next)) {
+    // while ((slow && slow.next) && (fast && fast.next)) {
+    while (slow.next && fast.next) {
+
         slow.next = slow.next.next;
         slow = slow.next;
-        
+
         fast.next = fast.next.next
         fast = fast.next
     }

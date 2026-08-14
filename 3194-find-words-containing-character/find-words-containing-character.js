@@ -10,14 +10,7 @@ var findWordsContaining = function (words, x) {
         let st = words[i];
         console.log(st)
         let j = 0;
-        console.log(st.length)
         while (j < st.length) {
-            // if(st[j] !== x){
-            //     continue
-            // }else{
-            //     ans.push(i)
-            //     break;
-            // }
             if (st[j] === x) {
                 ans.push(i)
                 break;

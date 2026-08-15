@@ -40,3 +40,21 @@ var isPalindrome = function (s) {
     }
     return true
 };
+
+
+
+var isPalindrome = function (s) {
+    let str = '';
+    let i = 0;
+    let rev = ''
+    while (i < s.length) {
+        if (s[i].match(/[a-z0-9]/i)) {
+            str += s[i].toLowerCase();
+            rev = s[i].toLowerCase() + rev;
+        }
+
+        ++i
+    }
+
+    return str === rev
+}

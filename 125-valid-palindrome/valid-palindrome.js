@@ -58,3 +58,23 @@ var isPalindrome = function (s) {
 
     return str === rev
 }
+
+
+var isPalindrome = function (s) {
+    s = s.toLowerCase();
+    let str = '';
+    let i = 0;
+    let rev = ''
+    while (i < s.length) {
+        if (s[i].charCodeAt() >= 'a'.charCodeAt() &&
+            s[i].charCodeAt() <= 'z'.charCodeAt() ||
+            s[i].charCodeAt() >= '0'.charCodeAt() &&
+            s[i].charCodeAt() <= '9'.charCodeAt()) {
+            str += s[i];
+            rev = s[i] + rev
+        }
+        ++i
+    }
+
+    return str===rev
+}

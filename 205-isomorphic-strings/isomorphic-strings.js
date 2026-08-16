@@ -34,3 +34,24 @@ var isIsomorphic = function (s, t) {
 
     return true
 };
+
+
+
+var isIsomorphic = function (s, t) {
+    let mapStoT = {}
+    let mapTtoS = {}
+    let i = 0;
+
+    while (i < s.length) {
+        if (!mapStoT[s[i]] && !mapTtoS[t[i]]) {
+            mapStoT[s[i]] = t[i]
+            mapTtoS[t[i]] = s[i]
+
+        }
+        else if (mapStoT[s[i]] !== t[i] || mapTtoS[t[i]] !== s[i]) {
+            return false
+        }
+        ++i
+    }
+    return true
+}

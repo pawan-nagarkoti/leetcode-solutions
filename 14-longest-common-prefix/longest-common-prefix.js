@@ -21,3 +21,21 @@ var longestCommonPrefix = function (strs) {
     }
     return longP;
 };
+
+
+var longestCommonPrefix = function (strs) {
+    let x = 0;
+    while(x<strs[0].length){
+        let ch = strs[0][x]
+        let j=1
+        while(j<strs.length){
+            if(ch !== strs[j][x]){
+                return strs[0].substring(0,x)
+            }
+            ++j
+        }
+        ++x
+    }
+
+    return strs[0]
+}

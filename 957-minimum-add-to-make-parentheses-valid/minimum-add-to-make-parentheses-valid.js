@@ -4,7 +4,6 @@
  */
 var minAddToMakeValid = function (s) {
     let stack = []
-    check = false;
     let i = 0;
     while (i < s.length) {
         if (stack[stack.length - 1] === '(' && s[i] === ')') {

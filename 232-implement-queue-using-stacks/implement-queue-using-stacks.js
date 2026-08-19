@@ -1,4 +1,3 @@
-
 var MyQueue = function () {
     this.s1 = []
     this.s2 = []

@@ -70,7 +70,7 @@
 
 
 
-
+// implement stack uisng one queue
 var MyStack = function () {
     this.q = []
 };

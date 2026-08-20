@@ -24,9 +24,33 @@ var removeOuterParentheses = function (s) {
                     st = popElm + st
                 }
             }
-            store +=st;
+            store += st;
         }
         ++i
     }
     return store;
 };
+
+
+var removeOuterParentheses = function (s) {
+    let stack = []
+    let ans = ''
+    let i = 0;
+    while (i < s.length) {
+        if (s[i] === '(') {
+            stack.push(s[i])
+            let len = stack.length;
+            if (len > 1) {
+                ans += s[i]
+            }
+        } else {
+            let len = stack.length;
+            if (len > 1) {
+                ans += s[i]
+            }
+            stack.pop()
+        }
+        ++i
+    }
+    return ans
+}

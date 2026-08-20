@@ -61,7 +61,8 @@ MinStack.prototype.push = function (value) {
     if (this.stack.length === 0) {
         this.stack.push([value, value])
     } else {
-        let min = this.stack[this.stack.length - 1][1] < value ? this.stack[this.stack.length - 1][1] : value
+        let prevMinVal = this.stack[this.stack.length - 1][1]
+        let min = prevMinVal < value ? prevMinVal : value
 
         this.stack.push([value, min])
     }
@@ -71,21 +72,21 @@ MinStack.prototype.push = function (value) {
  * @return {void}
  */
 MinStack.prototype.pop = function () {
-    this.stack.pop(this.stack[this.stack.length-1])
+    this.stack.pop(this.stack[this.stack.length - 1])
 };
 
 /**
  * @return {number}
  */
 MinStack.prototype.top = function () {
-    return this.stack[this.stack.length-1][0]
+    return this.stack[this.stack.length - 1][0]
 };
 
 /**
  * @return {number}
  */
 MinStack.prototype.getMin = function () {
-    return this.stack[this.stack.length-1][1]
+    return this.stack[this.stack.length - 1][1]
 };
 
 /** 

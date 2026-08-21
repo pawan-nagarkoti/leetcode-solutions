@@ -22,22 +22,30 @@ var nextGreaterElement = function (nums1, nums2) {
             map[nums2[i]] = top;
             stack.push(nums2[i])
         } else if (nums2[i] > top) {
-            let check = true;
-            while (stack.length) {
-                if (nums2[i] > stack[stack.length - 1]) {
-                    stack.pop()
-                } else {
-                    map[nums2[i]] = stack[stack.length - 1];
-                    check = false;
-                    stack.push(nums2[i])
-                    break;
-                }
+            // let check = true;
+            // while (stack.length) {
+            //     if (nums2[i] > stack[stack.length - 1]) {
+            //         stack.pop()
+            //     } else {
+            //         map[nums2[i]] = stack[stack.length - 1];
+            //         check = false;
+            //         stack.push(nums2[i])
+            //         break;
+            //     }
+            // }
+
+            // if (check) {
+            //     map[nums2[i]] = -1;
+            //     stack.push(nums2[i])
+            // }
+
+            while (nums2[i] > stack[stack.length - 1] && stack.length) {
+                stack.pop()
             }
 
-            if (check) {
-                map[nums2[i]] = -1;
-                stack.push(nums2[i])
-            }
+            let isTop = stack[stack.length - 1] ? stack[stack.length - 1] : -1
+            map[nums2[i]] = isTop;
+            stack.push(nums2[i])
         }
         --i
     }

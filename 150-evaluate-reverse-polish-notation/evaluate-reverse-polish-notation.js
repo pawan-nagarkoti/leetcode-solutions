@@ -13,7 +13,6 @@ var evalRPN = function (tokens) {
         } else {
             let firstElm = stack.pop()
             let secondElm = stack.pop()
-            let c = eval(``)
             let ans = Math.trunc(eval(`${secondElm}  ${tokens[i]}  ${firstElm}`))
             stack.push(ans)
         }

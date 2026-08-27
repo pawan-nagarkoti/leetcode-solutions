@@ -64,10 +64,6 @@ var addTwoNumbers = function (l1, l2) {
 
     }
 
-    // if (carry) {
-    //     prev.next = new ListNode(carry);
-    //     prev = prev.next
-    // }
     return sentinal.next
 
 }

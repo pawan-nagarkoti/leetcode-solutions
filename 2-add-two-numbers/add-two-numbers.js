@@ -48,7 +48,7 @@ var addTwoNumbers = function (l1, l2) {
     let sentinal = new ListNode()
     let prev = sentinal
     let carry = 0
-    while (l1 || l2) {
+    while (l1 || l2 || carry) {
         let a = l1 ? l1.val : 0;
         let b = l2 ? l2.val : 0;
 
@@ -64,10 +64,10 @@ var addTwoNumbers = function (l1, l2) {
 
     }
 
-    if (carry) {
-        prev.next = new ListNode(carry);
-        prev = prev.next
-    }
+    // if (carry) {
+    //     prev.next = new ListNode(carry);
+    //     prev = prev.next
+    // }
     return sentinal.next
 
 }

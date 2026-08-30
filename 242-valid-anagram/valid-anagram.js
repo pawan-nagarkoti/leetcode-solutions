@@ -31,7 +31,6 @@ var isAnagram = function (s, t) {
 
 
     for (let key in map1) {
-
         if (map1[key] !== map2[key]) {
             return false
         }
@@ -39,3 +38,34 @@ var isAnagram = function (s, t) {
 
     return true
 };
+
+
+var isAnagram = function (s, t) {
+    let map = {}
+    let i=0;
+    while(i<s.length){
+        if(!map[s[i]]){
+            map[s[i]] = 1
+        }else{
+            map[s[i]] += 1
+        }
+        ++i
+    }
+
+    let j=0;
+    while(j<t.length){
+        if(!map[t[j]]){
+            return false
+        }else{
+            map[t[j]] -= 1
+        }
+        ++j
+    }
+
+    for(let key in map){
+        if(map[key] !== 0 ) return false
+    }
+
+    return true
+
+}

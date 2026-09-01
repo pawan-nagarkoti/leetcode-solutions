@@ -12,13 +12,13 @@ var search = function (nums, target) {
 
         if (target === nums[m]) {
             return m
-        }else if(nums[l] <= nums[m]) {
+        } else if (nums[l] <= nums[m]) { // left side sorted
             if (target < nums[m] && target >= nums[l]) {
                 r = m - 1
             } else {
                 l = m + 1
             }
-        } else {
+        } else { // right side sorted
             if (target > nums[m] && target <= nums[r]) {
                 l = m + 1
             } else {

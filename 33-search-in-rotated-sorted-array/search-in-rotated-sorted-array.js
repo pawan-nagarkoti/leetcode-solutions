@@ -12,9 +12,7 @@ var search = function (nums, target) {
 
         if (target === nums[m]) {
             return m
-        }
-
-        if (nums[l] <= nums[m]) {
+        }else if(nums[l] <= nums[m]) {
             if (target < nums[m] && target >= nums[l]) {
                 r = m - 1
             } else {

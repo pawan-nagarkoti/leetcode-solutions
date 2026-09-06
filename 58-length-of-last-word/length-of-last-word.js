@@ -24,3 +24,22 @@ var lengthOfLastWord = function (s) {
 
     return storeCount
 };
+
+var lengthOfLastWord = function (s) {
+    let i=s.length-1;
+    let count = 0;
+    let check = false;
+    while(i>=0){
+        if(s[i] !== ' ') check = true
+        if(s[i] !== ' ' && check){
+            ++count
+        }
+
+        if(s[i] === ' ' && check){
+            break;
+        }
+        --i
+    }
+
+    return count
+}

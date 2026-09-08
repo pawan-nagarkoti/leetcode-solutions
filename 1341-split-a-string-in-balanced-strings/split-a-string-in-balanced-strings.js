@@ -22,3 +22,24 @@ var balancedStringSplit = function (s) {
 
     return count
 };
+
+
+var balancedStringSplit = function (s) {
+    let ans = 0;
+    let count = 0;
+    let i=0;
+    while(i<s.length){
+        if(s[i] === 'R'){
+            ++count;
+        }else if(s[i]==='L'){
+            --count
+        }
+
+        if(count === 0){
+            ++ans
+        }
+        ++i
+    }
+
+    return ans;
+}

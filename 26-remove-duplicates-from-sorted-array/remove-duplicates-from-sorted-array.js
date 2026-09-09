@@ -29,5 +29,5 @@ var removeDuplicates = function (nums) {
         }
         ++i
     }
-    return nums.length=++x
+    return ++x
 }

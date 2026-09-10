@@ -22,3 +22,17 @@ var findWordsContaining = function (words, x) {
 
     return ans;
 };
+
+
+var findWordsContaining = function (words, x) {
+    let i=0
+    let ans = []
+    while(i<words.length){
+        if(words[i].split('').includes(x)){
+            ans.push(i)
+        }
+        ++i
+    }
+
+    return ans
+}

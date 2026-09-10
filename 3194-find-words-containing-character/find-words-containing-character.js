@@ -23,12 +23,23 @@ var findWordsContaining = function (words, x) {
     return ans;
 };
 
+function check(str,value){
+    let i=0;
+    while(i<str.length){
+        if(str[i] === value){
+            return true
+        }
+        ++i
+    }
+    return false
+}
 
 var findWordsContaining = function (words, x) {
     let i=0
     let ans = []
     while(i<words.length){
-        if(words[i].split('').includes(x)){
+        // if(words[i].split('').includes(x)){
+        if(check(words[i],x)){
             ans.push(i)
         }
         ++i
